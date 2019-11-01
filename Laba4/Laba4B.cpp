@@ -35,13 +35,14 @@ bool is_palindrome(char* str) {
 int main() {
 	ifstream in("input.txt");
 	ofstream out("output.txt");
-	char line[301], str[301], tmp[301] = "there is no palindromes";
+	char line[301], str[301]; 
 	while (in.getline(line, 301)) {
+		char tmp[301] = "there is no palindromes";
 		int i = 0;
 		int count = 0;
 		while (line[i] && count < 2) {
 			int length = 0;
-			while (line[i] != ' ' && line[i] != '\0') {
+			while (line[i] != ' ' && line[i]) {
 				str[length] = line[i];
 				++i;
 				++length;
