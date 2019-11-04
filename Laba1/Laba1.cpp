@@ -8,12 +8,12 @@ int main() {
 	cin >> x;
 	cout << "k = ";
 	cin	>> k;
-   int a = 1, b = 2;
+	int a = 1;
    double  slag = 1, rez = 1;
 	 while (abs(slag)>= pow(10, -k) ) { 
-		slag = slag *(-1)* a / b * x;
+		slag = slag *(-1)* a / (a + 1) * x;
 		rez += slag;
-		a+=2; b+=2; 
+		a+=2; 
 	 }
 	cout << "using Talor  " << fixed << setprecision(k) << rez << '\n'; 
 
@@ -24,5 +24,4 @@ int main() {
 	double dif;
 	dif = rez - rez1;
 	cout << "difference " << dif; 
-
 }
