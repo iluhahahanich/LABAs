@@ -6,15 +6,9 @@ char* myStrncat(char* strDest, const char* strSource, size_t count) {
 	while (strDest[last]) {
 		++last;
 	}	
-	int  n = 0;
-	while (n < count) {
-		int k = 0;
-		while (strSource[k]) {
-			strDest[last] = strSource[k];
-			++k;
-			++last;
-		}
-		++n;
+	int n = 0;
+	while (n < count && strSource[n]) {
+		strDest[last++] = strSource[n++];
 	}
 	strDest[last] = '\0';
 	return strDest;
@@ -31,4 +25,3 @@ int main() {
 	in.close();
 	out.close();
 }
-
